@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Employee Directory</h1>
+    <div class="top-controls">
+      <input type="text" id="searchBar" placeholder="Search by name or email" />
+      <select id="sortBy">
+        <option value="">Sort By</option>
+        <option value="firstName">First Name</option>
+        <option value="department">Department</option>
+      </select>
+      <button onclick="toggleFilter()">Filter</button>
+      <a href="form.html" class="btn">Add Employee</a>
+    </div>
+  </header>
+
+  <div id="filterSection" class="hidden">
+    <label>First Name: <input type="text" id="filterFirstName" /></label>
+    <label>Department: <input type="text" id="filterDepartment" /></label>
+    <label>Role: <input type="text" id="filterRole" /></label>
+    <button onclick="applyFilter()">Apply</button>
+    <button onclick="clearFilter()">Clear</button>
+  </div>
+
+  <main>
+    <div id="employeeList">
+      <div id="employeeList"></div>
+    </div>
+    <div class="pagination-controls">
+      <label>Show:
+        <select id="itemsPerPage" onchange="changeItemsPerPage()">
+          <option>10</option><option>25</option><option>50</option><option>100</option>
+        </select>
+      </label>
+    </div>
+  </main>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
